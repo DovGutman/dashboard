@@ -1,0 +1,28 @@
+# Visual Studio / MSBuild
+.vs/
+# Solution user options
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Temp/backup files
+*.tmp
+*.bak
+
+# .NET build outputs
+**/bin/
+**/obj/
+
+# Rider
+.idea/
+
+# Node
+**/node_modules/
+
+# Vite/TS build artifacts
+client/dist/
+client/.vite/
+
+# Logs
+*.log

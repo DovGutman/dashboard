@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="DashboardService.Application/DashboardService.Application.csproj" />
+  <Project Path="DashboardService.Contracts/DashboardService.Contracts.csproj" />
+  <Project Path="DashboardService.Dal/DashboardService.Dal.csproj" />
+  <Project Path="DashboardService/DashboardService.csproj" />
+</Solution>

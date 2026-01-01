@@ -1,0 +1,31 @@
+.tickets {
+	text-align: left;
+	width: min(1100px, 100%);
+}
+
+.tickets__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.tickets__layout {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 1rem;
+}
+
+@media (max-width: 800px) {
+	.tickets__layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.tickets__list,
+.tickets__detail {
+	border: 1px solid currentColor;
+	border-radius: 8px;
+	padding: 0.75rem;
+}

@@ -1,0 +1,9 @@
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.field__error {
+	margin: 0;
+}

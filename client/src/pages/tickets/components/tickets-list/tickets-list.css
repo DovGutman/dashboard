@@ -1,0 +1,17 @@
+.ticket-row {
+	width: 100%;
+	text-align: left;
+	padding: 0.6rem;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	background: transparent;
+}
+
+.ticket-row[aria-current='true'] {
+	border-color: currentColor;
+}
+
+.ticket-row__meta {
+	opacity: 0.8;
+	font-size: 0.9em;
+}
