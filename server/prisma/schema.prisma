@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Tickets {
+  Id              String   @id(map: "PK_Tickets") @db.Uuid
+  Title           String   @db.VarChar(200)
+  Description     String   @db.VarChar(4000)
+  Priority        Int
+  Status          Int
+  AssignedAgentId String?  @db.VarChar(100)
+  CreatedAt       DateTime @db.Timestamptz(6)
+  UpdatedAt       DateTime @db.Timestamptz(6)
+
+  @@index([Priority], map: "IX_Tickets_Priority")
+  @@index([Status], map: "IX_Tickets_Status")
+}
+
+model EFMigrationsHistory {
+  MigrationId    String @id(map: "PK___EFMigrationsHistory") @db.VarChar(150)
+  ProductVersion String @db.VarChar(32)
+
+  @@map("__EFMigrationsHistory")
+}

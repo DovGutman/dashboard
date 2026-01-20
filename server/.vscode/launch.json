@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach: server (9229)",
+      "type": "pwa-node",
+      "request": "attach",
+      "port": 9229,
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "skipFiles": ["<node_internals>/**"],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "name": "Attach: pick process",
+      "type": "pwa-node",
+      "request": "attach",
+      "processId": "${command:PickProcess}",
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "skipFiles": ["<node_internals>/**"],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    }
+  ]
+}
