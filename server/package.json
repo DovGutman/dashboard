@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "kill:port": "powershell -Command \"Get-NetTCPConnection -LocalPort 5131 -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -ne 0 } | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }\"",
+    "prestart:dev": "npm run kill:port",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    
+    "start:debug": "ts-node-dev --inspect=0 --respawn --transpile-only src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@nestjs/common": "^11.1.12",
+    "@nestjs/core": "^11.1.12",
+    "@nestjs/platform-express": "^11.1.12",
+    "@nestjs/swagger": "^11.1.0",
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "dotenv": "^17.2.3",
+    "pg": "^8.17.1",
+    "prisma": "^7.2.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/pg": "^8.16.0",
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
